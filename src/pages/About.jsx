@@ -4,7 +4,12 @@ import { Link } from "react-router-dom"
 function About() {
   return (
     <div className="about-page-container">
-      <img src="/images/about-hero.png" alt="About Us" className="about-hero-img" />
+      <img
+        src={`${import.meta.env.BASE_URL}images/about-hero.png`}
+        alt="About Us"
+        className="about-hero-img"
+      />
+
       
         <div className="about-page-content">
           <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>

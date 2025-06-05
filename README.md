@@ -1,12 +1,48 @@
-# React + Vite
+# 🚐 VanLife React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive frontend van rental platform built with React and Vite. Part of the Scrimba Frontend Developer Career Path.
 
-Currently, two official plugins are available:
+![Live](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue?logo=github&logoColor=white&labelColor=black&link=https://yapisango.github.io/van-life-reactroute)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 **[Live Demo](https://yapisango.github.io/van-life-reactroute)**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- React Router for client-side routing
+- Dynamic pages for van listings and details
+- Filters by van type (simple, rugged, luxury)
+- Styled using custom CSS
+- Hosted via GitHub Pages
+
+---
+
+## 🚀 Getting Started
+
+Clone and run locally:
+
+```bash
+git clone https://github.com/yapisango/van-life-reactroute.git
+cd van-life-reactroute
+npm install
+npm run dev
+
+🛠️ Tech Stack
+React
+
+Vite
+
+React Router
+
+CSS
+
+GitHub Pages (deployment)
+
+📦 Deployment
+This app is deployed to GitHub Pages using:
+    npm run build
+    npm run deploy
+
+🙌 Acknowledgements
+Scrimba Frontend Developer Career Path
