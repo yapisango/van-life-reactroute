@@ -1,234 +1,257 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
-  background-color: #FFF7ED;
-  font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF7ED;
+    font-family: "Inter", sans-serif;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Hide scrollbar for WebKit and Firefox */
 body::-webkit-scrollbar {
   display: none;
 }
+
 body {
-  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 }
 
-/* HEADER */
+/* Chrome/Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
 header {
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-inline: 30px;
-  padding: 60px 120px;
-  background-color: #FFF7ED;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
 }
 
 header .site-logo {
-  color: black;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 25px;
-}
-
-/* Container for the nav links */
-.nav-links {
-  display: flex;
-  gap: 20px;
+    color: black;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
 }
 
 header a {
-  text-decoration: none;
-  color: #4D4D4D;
-  font-weight: 600;
-  padding: 5px 10px;
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 20px;
 }
 
 header a:hover {
-  color: #161616;
-  text-decoration: underline;
+    color: #161616;
+    text-decoration: underline;
 }
 
-
-/* LINK BUTTONS */
 .link-button {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  padding: 0.75rem 1.375rem;
-  color: initial;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.1s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: .75rem 1.375rem;
+    color: initial;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
 }
 
 .link-button:hover {
-  transform: translate(1px, 1px);
+    transform: translate(1px, 1px);
 }
 
-/* HOME PAGE */
-.home-page {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
-              url("/images/home-hero.png") no-repeat center center;
-  background-size: cover;
-  min-height: 100vh;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 120px; /* or 2rem if you prefer responsive spacing */
-  margin: 0;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
+/*** HOME PAGE ***/
+.home-container {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./images/home-hero.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 350px;
+    color: white;
+    padding: 45px 23px;
+}
+
+.home-container h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 42px;
+}
+
+.home-container p {
+    line-height: 24px;
+}
+
+.home-container a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.home-container a:hover {
+    transform: translate(1px, 1px);
 }
 
 
-.home-content {
-  padding: 0; /* Top spacing from Figma (approx 177px), matching left padding */
-  max-width: 548px;
-  margin: 0 auto;
-  text-align: left;
+/*** ABOUT PAGE ***/
+.about-hero-image {
+    max-width: 100%;
 }
 
-.home-page h1 {
-  font-family: Inter, sans-serif;
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 42px;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 32px;
+.about-page-content {
+    padding-inline: 23px;
+    color: #161616;
+    margin-bottom: 55px;
 }
 
-.home-page p {
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 32px;
+.about-page-content h1 {
+    line-height: 38px;
 }
 
-.home-page .link-button {
-  font-family: Inter, sans-serif;
-  font-weight: 700;
-  font-size: 15.95px;
-  line-height: 31.66px;
-  width: 100%;
-  max-width: 100%;
-  height: 50px;
-  border-radius: 5px;
-  background-color: #ff8c38;
-  color: white;
-  border: none;
-  cursor: pointer;
+.about-page-content p {
+    line-height: 22px;
 }
 
-.home-page.link-button:hover {
-  transform: translate(1px, 1px);
+.about-page-cta {
+    background-color: #FFCC8D;
+    color: #161616;
+    padding-inline: 32px;
+    padding-bottom: 32px;
+    margin-inline: 27px;
+    border-radius: 5px;
 }
 
-.home-page footer {
-  margin-top: auto;
+.about-page-cta h2 {
+    margin: 0;
+    padding-block: 37px;
+}
+
+.about-page-cta .link-button {
+    background-color: #161616;
+    color: white;
+    border-radius: 10px;
+}
+
+/*** VAN PAGES ***/
+.van-list-container {
+    padding-inline: 23px
+}
+
+.van-info {
   text-align: center;
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22.92px;
-  color: #000;
-  padding: 2rem 0;
-  width: 100%;
+}
+
+.van-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 34px;
+    margin-top: 57px;
+    overflow: visible !important;
+    min-height: 400px;
+}
+
+.van-tile {
+  border: 1px solid red;
+  padding: 10px;
 }
 
 
-/* ABOUT PAGE */
-.about-hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
+.van-tile a {
+    color: #161616;
+    text-decoration: none;    
 }
 
-.about-page {
-  background-color: #FFF7ED;
-  padding: 40px 120px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.van-tile img {
+    max-width: 100%;
+    border-radius: 5px;
 }
 
-.about-page main {
-  max-width: 800px;
-  margin: 0 auto;
+.van-list-container button {
+    margin-right: 20px;
+    cursor: pointer;
 }
 
-.about-page h1 {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #161616;
+.van-type {
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.about-page p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  color: #4D4D4D;
+.van-type:hover {
+    color: #FFEAD0;
 }
 
-.about-cta {
-  background-color: #FFCC8D;
-  padding: 40px;
-  text-align: center;
-  border-radius: 8px;
+.van-type:focus {
+    outline: none;
 }
 
-.about-cta p {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.van-type.selected {
+    color: #FFEAD0;
 }
 
-.about-hero-btn {
-  background-color: #161616;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
+.van-type.simple:hover, .van-type.simple.selected {
+    background-color: #E17654;
 }
 
-.about-hero-btn:hover {
-  background-color: #333;
+.van-type.rugged:hover, .van-type.rugged.selected {
+    background-color: #115E59;
 }
 
-.about-footer {
-  text-align: center;
-  padding: 20px 0;
-  color: #AAA;
-  font-size: 14px;
+.van-type.luxury:hover, .van-type.luxury.selected {
+    background-color: #161616;
 }
 
+.van-type.clear-filters {
+    margin-left: -20px;
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+}
 
-
+i[class*='van-type-'] {
+    padding: 7px 14px;
+}
 
 
 
