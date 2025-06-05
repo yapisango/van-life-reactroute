@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #FFF7ED;
+  font-family: "Inter", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide scrollbar for WebKit and Firefox */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+}
+
+/* HEADER */
+header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 30px;
+  padding: 60px 120px;
+  background-color: #FFF7ED;
+}
+
+header .site-logo {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+/* Container for the nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+header a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+header a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+
+
+/* LINK BUTTONS */
+.link-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 1.375rem;
+  color: initial;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.link-button:hover {
+  transform: translate(1px, 1px);
+}
+
+/* HOME PAGE */
+.home-page {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+              url("/images/home-hero.png") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px; /* or 2rem if you prefer responsive spacing */
+  margin: 0;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+
+.home-content {
+  padding: 0; /* Top spacing from Figma (approx 177px), matching left padding */
+  max-width: 548px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.home-page h1 {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 42px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.home-page p {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.home-page .link-button {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 15.95px;
+  line-height: 31.66px;
+  width: 100%;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ff8c38;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.home-page.link-button:hover {
+  transform: translate(1px, 1px);
+}
+
+.home-page footer {
+  margin-top: auto;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.92px;
+  color: #000;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+
+/* ABOUT PAGE */
+.about-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-page {
+  background-color: #FFF7ED;
+  padding: 40px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-page main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-page h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #161616;
+}
+
+.about-page p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #4D4D4D;
+}
+
+.about-cta {
+  background-color: #FFCC8D;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.about-cta p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-hero-btn {
+  background-color: #161616;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.about-hero-btn:hover {
+  background-color: #333;
+}
+
+.about-footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #AAA;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
