@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="about-page-container">
       <img
-        src={`${import.meta.env.BASE_URL}images/about-hero.png`}
+        src='images/about-hero.png'
         alt="About Us"
         className="about-hero-img"
       />

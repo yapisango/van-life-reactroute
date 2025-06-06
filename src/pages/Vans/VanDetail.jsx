@@ -6,9 +6,22 @@ export default function VanDetail() {
     const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
+        console.log("Fetching van with ID:", params.id)
+
         fetch(`/api/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVan(data.vans))
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("Failed to fetch van")
+                }
+                return res.json()
+            })
+            .then(data => {
+                console.log("Fetched data:", data)
+                setVan(data.van)
+            })
+            .catch(err => {
+                console.error("Fetch error:", err)
+            })
     }, [params.id])
 
     return (

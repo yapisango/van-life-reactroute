@@ -61,6 +61,22 @@ header a:hover {
     text-decoration: underline;
 }
 
+main {
+    margin-bottom: 84px;
+}
+
+footer {
+    background-color: #161616;
+    color: #AAAAAA;
+    height: 74px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    font-weight: 500;
+}
+
 .link-button {
     display: inline-block;
     text-align: center;
@@ -163,27 +179,13 @@ header a:hover {
     padding-inline: 23px
 }
 
-.van-info {
-  text-align: center;
-}
-
 .van-list {
     display: grid;
-    
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 34px;
     margin-top: 57px;
-    overflow: visible !important;
-    min-height: 400px;
 }
-
-.van-tile {
-  border: 1px solid red;
-  padding: 10px;
-}
-
 
 .van-tile a {
     color: #161616;
@@ -253,8 +255,72 @@ i[class*='van-type-'] {
     padding: 7px 14px;
 }
 
+.van-detail-container {
+    padding: 27px;
+}
 
+.van-detail-container .back-button {
+    color: black;
+    text-decoration: none;
+}
 
+.van-detail-container .back-button:visited {
+    
+}
 
+.van-detail-container .back-button span {
+    text-decoration: underline;
+}
 
+.van-detail {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+}
 
+.van-detail img {
+    border-radius: 5px;
+    margin-block: 47px;
+}
+
+.van-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.van-detail > i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+    background-color: #FF8C38;
+    color: white;
+    font-size: 1.125rem;
+}
+
+.host-nav {
+    display: flex;
+}
+
+.host-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 500;
+    padding: 5px 20px;
+}
+
+.host-nav a:hover {
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 600;
+}
