@@ -9,30 +9,25 @@ html, body {
     font-family: "Inter", sans-serif;
 }
 
+a {
+    text-decoration: unset;
+    color: unset;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
 
 body {
-  /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: #888 transparent;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Chrome/Safari */
-::-webkit-scrollbar {
-  width: 8px;
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
 
 header {
     height: 110px;
@@ -90,18 +85,32 @@ footer {
     transition: transform .1s ease-in-out;
 }
 
+.back-button {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-top: 60px;
+    margin-left: 26px;
+}
+
+.back-button span:hover {
+    text-decoration: underline;
+}
+
 .link-button:hover {
     transform: translate(1px, 1px);
 }
 
 /*** HOME PAGE ***/
 .home-container {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
-              url(/images/home-hero.png) no-repeat center center;
-  background-size: cover;
-  min-height: 350px;
-  color: white;
-  padding: 45px 23px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./images/home-hero.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 350px;
+    color: white;
+    padding: 45px 23px;
 }
 
 .home-container h1 {
@@ -174,9 +183,19 @@ footer {
     border-radius: 10px;
 }
 
+
 /*** VAN PAGES ***/
 .van-list-container {
     padding-inline: 23px
+}
+
+.van-list-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+    margin-right: 15px;
 }
 
 .van-list {
@@ -325,7 +344,6 @@ i[class*='van-type-'] {
     font-weight: 600;
 }
 
-
 .host-van-link-wrapper {
     color: unset;
     text-decoration: unset;
@@ -393,7 +411,6 @@ i[class*='van-type-'] {
     margin-block: 0;
 }
 
-
 .host-van-detail-nav {
     display: flex;
     margin-block: 25px;
@@ -419,7 +436,6 @@ i[class*='van-type-'] {
     text-decoration: underline;
     font-weight: 700;
 }
-
 
 .host-van-detail-info > h4 {
     font-weight: 700;
