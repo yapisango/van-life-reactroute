@@ -74,12 +74,23 @@ export function makeServer({ environment = "development" } = {}) {
     routes() {
       this.namespace = "api"
       this.logging = false
+      this.timing = 2000 
 
-      this.get("/vans", (schema) => schema.vans.all())
+      this.get("/vans", (schema) => {
+        //return new Response(400, {}, { error: "Failed to fetch vans" })
+        return schema.vans.all()
+      })
 
       this.get("/host/vans", (schema) => {
         return schema.vans.where({ hostId: "123" })
       })
+
+      this.get("/vans/:id", (schema, request) => {
+    const id = request.params.id;
+    const van = schema.vans.find(id);
+    return { van };
+});
+
 
       this.get("/host/vans/:id", (schema, request) => {
         const id = request.params.id

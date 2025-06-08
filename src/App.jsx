@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
+import NotFound from './pages/NotFound.jsx';
+import Login from './pages/Login.jsx';
 import Vans from './pages/Vans/Vans.jsx';
 import VanDetail from './pages/Vans/VanDetail.jsx';
 import Layout from './components/Layout.jsx';
@@ -15,7 +17,9 @@ import HostVanInfo from './pages/Host/HostVanInfo.jsx';
 import HostVanPricing from './pages/Host/HostVanPricing.jsx';
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx';
 
+
 import './server';
+
 
 export default function App() {
   return (
@@ -38,6 +42,7 @@ export default function App() {
               <Route path='photos' element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
