@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs"
+import { createServer, Model, Response } from "miragejs"
 
 export function makeServer({ environment = "development" } = {}) {
   let server = createServer({
@@ -6,6 +6,7 @@ export function makeServer({ environment = "development" } = {}) {
 
     models: {
       vans: Model,
+      user: Model,
     },
 
     seeds(server) {
@@ -69,6 +70,12 @@ export function makeServer({ environment = "development" } = {}) {
         type: "rugged",
         hostId: "123",
       })
+      server.create("user", { 
+        id: "123", 
+        email: "b@b.com", 
+        password: "p123", 
+        name: "Bob" 
+      })
     },
 
     routes() {
@@ -86,16 +93,34 @@ export function makeServer({ environment = "development" } = {}) {
       })
 
       this.get("/vans/:id", (schema, request) => {
-    const id = request.params.id;
-    const van = schema.vans.find(id);
-    return { van };
-});
+        const id = request.params.id;
+        const van = schema.vans.find(id);
+        return { van };
+      });
 
 
       this.get("/host/vans/:id", (schema, request) => {
         const id = request.params.id
         const van = schema.vans.findBy({ id, hostId: "123" })
         return { van }
+      })
+
+      this.post("/login", (schema, request) => {
+            const { email, password } = JSON.parse(request.requestBody)
+            const foundUser = schema.users.findBy({ email, password })
+
+            if (!foundUser) {
+                return new Response(401, {}, { message: "No user with those credentials found!" })
+            }
+
+            return {
+              user: {
+                id: foundUser.id,
+                email: foundUser.email,
+                name: foundUser.name,
+              },
+              token: "Enjoy your pizza, here is your token!",
+            }
       })
     },
   })

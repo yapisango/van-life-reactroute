@@ -1,12 +1,32 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
+import { loginUser } from "../api"
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const location = useLocation()
+    const [status, setStatus] = React.useState("idle")
+    const [error, setError] = React.useState(null)
 
-    function handleSubmit(e) {
+    const navigate = useNavigate()
+
+    async function handleSubmit(e) {
         e.preventDefault()
-        console.log(loginFormData)
+        setStatus("submitting")
+        loginUser(loginFormData)
+            .then(data => {
+                setError(null)
+                localStorage.setItem("loggedIn", true)
+                localStorage.setItem("user", JSON.stringify(data.user))
+                navigate("/host", { replace: true })
+            })
+            .catch(err => {
+                setError(err)
+             })
+             .finally(() => {
+                setStatus("idle")
+            })
+
     }
 
     function handleChange(e) {
@@ -17,8 +37,15 @@ export default function Login() {
         }))
     }
 
+           
     return (
         <div className="login-container">
+            {location.state?.message && 
+                <h3 className="login-error">{location.state.message}</h3>
+            }
+
+            {error && <h3 className="login-error" style={{ color: "red" }}>{error.message}</h3>} 
+
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <input
@@ -35,7 +62,14 @@ export default function Login() {
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button>Log in</button>
+                <button 
+                    disabled={status === "submitting"}
+                >
+                    {status === "submitting" 
+                        ? "Logging in..." 
+                        : "Log in"
+                    }
+                </button>
             </form>
         </div>
     )

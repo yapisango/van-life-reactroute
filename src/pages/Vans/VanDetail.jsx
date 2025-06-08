@@ -24,7 +24,7 @@ export default function VanDetail() {
         }
 
         loadVan();
-    }, [params.id]);
+    }, [id]);
 
     if (loading) 
       return <h2>Loading van details...</h2>;
