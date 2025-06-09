@@ -7,8 +7,8 @@ export default function Login() {
     const location = useLocation()
     const [status, setStatus] = React.useState("idle")
     const [error, setError] = React.useState(null)
-
     const navigate = useNavigate()
+    const from = location.state?.from || "/host"
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -18,7 +18,7 @@ export default function Login() {
                 setError(null)
                 localStorage.setItem("loggedIn", true)
                 localStorage.setItem("user", JSON.stringify(data.user))
-                navigate("/host", { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 setError(err)
