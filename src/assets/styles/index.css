@@ -515,6 +515,7 @@ i[class*='van-type-'] {
     border-radius: 6px;
     height: 55px;
     margin-top: 22px;
+    margin-bottom: 22px;
     color: white;
     font-family: "Inter", sans-serif;
 }
@@ -524,3 +525,181 @@ i[class*='van-type-'] {
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+/* ===== Income styles ===== */
+
+.host-income {
+  padding: 2rem;
+  background-color: #fff7ec;
+  font-family: 'Helvetica Neue', sans-serif;
+  height: 100%;
+}
+
+.subheading {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.subheading span {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.income-total {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.income-chart {
+  display: flex;
+  align-items: flex-end;
+  height: 250px;
+  position: relative;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 1rem;
+}
+
+.y-label {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.bar-area {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  height: 100%;
+  flex-grow: 1;
+  border-left: 2px dashed #ccc;
+  border-bottom: 2px dashed #ccc;
+  padding-left: 1rem;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.bar {
+  width: 30px;
+  background-color: #fde2bd;
+  transition: height 0.3s ease;
+}
+
+.bar.highlight {
+  background-color: #f88c2b;
+}
+
+.bar-label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* ===== Reviews styles ===== */
+
+.host-reviews {
+  padding: 2rem;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.top-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rating-breakdown {
+  margin-top: 1.5rem;
+  background-color: #fff6ec;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.overall-rating {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.orange-star {
+  color: #ff8c42;
+  font-size: 1.2rem;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.star-label {
+  width: 60px;
+  text-align: right;
+  font-weight: 500;
+  color: #333;
+}
+
+.rating-bar-bg {
+  flex-grow: 1;
+  background-color: #d3d3d3;
+  height: 12px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating-bar-fill {
+  height: 100%;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.rating-bar-fill.filled {
+  background-color: #ff8c42;
+}
+
+.review {
+  margin-bottom: 1rem;
+}
+
+.review-star {
+  color: #ff8c42;
+  margin-right: 4px;
+}
+
+.info {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.name {
+  margin: 0;
+}
+
+.date {
+  margin: 0;
+  color: gray;
+  font-size: 0.85rem;
+}
+
+

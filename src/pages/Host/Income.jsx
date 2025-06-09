@@ -1,45 +1,43 @@
 import React from "react"
+import "../../assets/styles/index.css"
 
 export default function Income() {
     const transactionsData = [
-        { amount: 720, date: "Jan 3, '23", id: "1" },
-        { amount: 560, date: "Dec 12, '22", id: "2" },
-        { amount: 980, date: "Dec 3, '22", id: "3" },
+        { amount: 3900, date: "Aug", id: "1" },
+        { amount: 1400, date: "Sep", id: "2" },
+        { amount: 2900, date: "Oct", id: "3" },
+        { amount: 2600, date: "Nov", id: "4" },
+        { amount: 1500, date: "Dec", id: "5" },
+        { amount: 600,  date: "Jan", id: "6" },
     ]
+
+    const maxAmount = Math.max(...transactionsData.map(t => t.amount))
 
     return (
         <section className="host-income">
-            <h1>Income</h1>
-            <p>
-                Last <span>30 days</span>
-            </p>
-            <h2>$2,260</h2>
+            <p className="subheading">Last <span>30 days</span></p>
+            <h1 className="income-total">$2,260</h1>
 
-            <img
-                className="graph"
-                src="images/income-graph.png"
-                alt="Income graph"
-            />
+            <div className="income-chart">
+                <div className="y-axis">
+                    {["$5k", "$4k", "$3k", "$2k", "$1k", "$0"].map(label => (
+                        <div key={label} className="y-label">{label}</div>
+                    ))}
+                </div>
 
-            <div className="info-header">
-                <h3>Your transactions ({transactionsData.length})</h3>
-                <p>
-                    Last <span>30 days</span>
-                </p>
-            </div>
-
-            <div className="transactions">
-                {transactionsData.length > 0 ? (
-                    transactionsData.map((item) => (
-                        <div key={item.id} className="transaction">
-                            <h3>${item.amount}</h3>
-                            <p>{item.date}</p>
+                <div className="bar-area">
+                    {transactionsData.map((item, index) => (
+                        <div className="bar-item" key={item.id}>
+                            <div
+                                className={`bar ${index === transactionsData.length - 1 ? "highlight" : ""}`}
+                                style={{ height: `${(item.amount / maxAmount) * 100}%` }}
+                            ></div>
+                            <p className="bar-label">{item.date}</p>
                         </div>
-                    ))
-                ) : (
-                    <p>No transactions available.</p>
-                )}
+                    ))}
+                </div>
             </div>
         </section>
     )
 }
+

@@ -1,5 +1,6 @@
 import React from "react"
 import { BsStarFill } from "react-icons/bs"
+import "../../assets/styles/index.css"
 
 export default function Reviews() {
     const reviewsData = [
@@ -23,16 +24,32 @@ export default function Reviews() {
         <section className="host-reviews">
             <div className="top-text">
                 <h2>Your reviews</h2>
-                <p>
-                    Last <span>30 days</span>
-                </p>
+                <p>Last <span>30 days</span></p>
             </div>
-            <img
-                className="graph"
-                src="/assets/images/reviews-graph.png"
-                alt="Review graph"
-            />
-            <h3>Reviews (2)</h3>
+
+            <div className="rating-breakdown">
+                <h3 className="overall-rating">
+                    5.0 <BsStarFill className="orange-star" /> overall rating
+                </h3>
+                {[5, 4, 3, 2, 1].map((star) => {
+                    const count = reviewsData.filter((r) => r.rating === star).length
+                    const widthPercent = (count / reviewsData.length) * 100
+
+                    return (
+                        <div className="rating-row" key={star}>
+                            <span className="star-label">{star} stars</span>
+                            <div className="rating-bar-bg">
+                                <div
+                                    className={`rating-bar-fill ${count > 0 ? "filled" : ""}`}
+                                    style={{ width: `${widthPercent}%` }}
+                                ></div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
+            <h3>Reviews ({reviewsData.length})</h3>
             {reviewsData.map((review) => (
                 <div key={review.id}>
                     <div className="review">
