@@ -45,19 +45,20 @@ export function makeServer({ environment = "development" } = {}) {
       })
       server.create("van", {
         "id": "4",
-      name: "Luxury Cruiser",
-      price: 120,
-      description: "Experience the ultimate in comfort and style.",
-      imageUrl: "/images/luxury-cruiser.png",
-      type: "luxury"
+      name: "Dream Finder",
+      price: 65,
+      description: "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated",
+      imageUrl: "/images/dream-finder.png",
+      type: "simple",
+      hostId: "789"
     }),
     server.create("van", {
       id: "5",
-      name: "Rugged Adventurer",
-      price: 90,
-      description: "Built for those who love off-road adventures.",
-      imageUrl: "/images/rugged-adventurer.png",
-      type: "rugged"
+      name: "The Cruiser",
+      price: 120,
+      description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.",
+      imageUrl: "/images/the-cruiser.png",
+      type: "luxury"
     }),
     server.create("van", {
       id: "6",
