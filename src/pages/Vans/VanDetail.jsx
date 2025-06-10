@@ -12,7 +12,7 @@ export default function VanDetail() {
     React.useEffect(() => {
         async function loadVan() {
             try {
-                const res = await fetch("/vans.json");
+                const res = await fetch("api/vans");
                 setLoading(true);
                 const data = await res.json();
                 const foundVan = data.vans.find(v => v.id === params.id);
