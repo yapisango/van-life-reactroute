@@ -26,7 +26,7 @@
     },
     {
       "id": "4",
-      "name": "Luxury Cruiser",
+      "name": "The Cruiser",
       "price": 120,
       "description": "Experience the ultimate in comfort and style.",
       "imageUrl": "/images/the-cruiser.png",
@@ -34,7 +34,7 @@
     },
     {
       "id": "5",
-      "name": "Rugged Adventurer",
+      "name": "Dreamfinder",
       "price": 90,
       "description": "Built for those who love off-road adventures.",
       "imageUrl": "/images/dreamfinder.png",
