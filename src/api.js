@@ -6,14 +6,14 @@ if (useFirebase) {
     ({ initializeApp } = await import("firebase/app"))
     ({ getFirestore, collection, doc, getDocs, getDoc } = await import("firebase/firestore"))
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyBNLn9Tqc64i4KFHVy4VxwinqoI0X8mMdg",
-        authDomain: "van-life-reactroute.firebaseapp.com",
-        projectId: "van-life-reactroute",
-        storageBucket: "van-life-reactroute.appspot.com",
-        messagingSenderId: "704417564625",
-        appId: "1:704417564625:web:e76f7e7fd5864b3c6e82f0"
-    }
+const firebaseConfig = {
+  apiKey: "AIzaSyA_xu5Wi1-106iRb0taAZ1lWMn-vk_KqSQ",
+  authDomain: "van-life-reactroute-827b4.firebaseapp.com",
+  projectId: "van-life-reactroute-827b4",
+  storageBucket: "van-life-reactroute-827b4.firebasestorage.app",
+  messagingSenderId: "419647889289",
+  appId: "1:419647889289:web:cf49d4ac26231ffa748b58"
+};
 
     const firebase = initializeApp(firebaseConfig)
     db = getFirestore(firebase)
