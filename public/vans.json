@@ -29,7 +29,7 @@
       "name": "Luxury Cruiser",
       "price": 120,
       "description": "Experience the ultimate in comfort and style.",
-      "imageUrl": "/images/luxury-cruiser.png",
+      "imageUrl": "/images/the-cruiser.png",
       "type": "luxury"
     },
     {
@@ -37,7 +37,7 @@
       "name": "Rugged Adventurer",
       "price": 90,
       "description": "Built for those who love off-road adventures.",
-      "imageUrl": "/images/rugged-adventurer.png",
+      "imageUrl": "/images/dreamfinder.png",
       "type": "rugged"
     },
     {
