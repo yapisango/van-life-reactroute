@@ -1,2 +1,55 @@
-const res = await fetch("/vans.json")
-const data = await res.json()
+{
+  "vans": [
+    {
+      "id": "1",
+      "name": "Modest Explorer",
+      "price": 60,
+      "description": "The Modest Explorer is built for adventure on a budget.",
+      "imageUrl": "/images/modest-explorer.png",
+      "type": "simple"
+    },
+    {
+      "id": "2",
+      "name": "Beach Bum",
+      "price": 80,
+      "description": "This van is perfect for hitting the beach with style.",
+      "imageUrl": "/images/beach-bum.png",
+      "type": "rugged"
+    },
+    {
+      "id": "3",
+      "name": "Green Wonder",
+      "price": 75,
+      "description": "Eco-friendly and efficient for nature lovers.",
+      "imageUrl": "/images/green-wonder.png",
+      "type": "luxury"
+    },
+    {
+      "id": "4",
+      "name": "Luxury Cruiser",
+      "price": 120,
+      "description": "Experience the ultimate in comfort and style.",
+      "imageUrl": "/images/luxury-cruiser.png",
+      "type": "luxury"
+    },
+    {
+      "id": "5",
+      "name": "Rugged Adventurer",
+      "price": 90,
+      "description": "Built for those who love off-road adventures.",
+      "imageUrl": "/images/rugged-adventurer.png",
+      "type": "rugged"
+    },
+    {
+      "id": "6",
+      "name": "Green Wonder",
+      "price": 70,
+      "description":
+        "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
+      "imageUrl": "/images/green-wonder.png",
+      "type": "rugged",
+      "hostId": "123"
+    }
+  ]
+}
+

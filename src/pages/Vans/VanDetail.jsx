@@ -3,7 +3,7 @@ import { Link, useParams, useLocation } from "react-router-dom"
 import { getVan } from "../../api";
 
 export default function VanDetail() {
-    const { id } = useParams()
+    const params = useParams()
     const location = useLocation()
     const [van, setVan] = React.useState(null)
     const [loading, setLoading] = React.useState(false);
@@ -12,9 +12,11 @@ export default function VanDetail() {
     React.useEffect(() => {
         async function loadVan() {
             try {
+                const res = await fetch("/vans.json");
                 setLoading(true);
-                const data = await getVan(id);
-                setVan(data);
+                const data = await res.json();
+                const foundVan = data.vans.find(v => v.id === params.id);
+                setVan(foundVan);
             } catch (err) {
                 console.error("Failed to load van:", err);
                 setError("Van not found or failed to load.");
@@ -24,7 +26,7 @@ export default function VanDetail() {
         }
 
         loadVan();
-    }, [id]);
+    }, [params.id]);
 
     if (loading) 
       return <h2>Loading van details...</h2>;
@@ -51,7 +53,7 @@ export default function VanDetail() {
             
             {van ? (
                 <div className="van-detail">
-                    <img src={van.imageUrl} />
+                    <img src={van.imageUrl} alt={van.name} />
                     <i className={`van-type ${van.type} selected`}>
                         {van.type}
                     </i>
