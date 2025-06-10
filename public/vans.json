@@ -1,0 +1,2 @@
+const res = await fetch("/vans.json")
+const data = await res.json()
