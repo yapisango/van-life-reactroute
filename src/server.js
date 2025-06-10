@@ -51,15 +51,16 @@ export function makeServer({ environment = "development" } = {}) {
       imageUrl: "/images/dream-finder.png",
       type: "simple",
       hostId: "789"
-    }),
+    })
     server.create("van", {
       id: "5",
       name: "The Cruiser",
       price: 120,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.",
       imageUrl: "/images/the-cruiser.png",
-      type: "luxury"
-    }),
+      type: "luxury",
+      hostId: "789"
+    })
     server.create("van", {
       id: "6",
       name: "Green Wonder",
@@ -69,7 +70,7 @@ export function makeServer({ environment = "development" } = {}) {
       imageUrl: "/images/green-wonder.png",
       type: "rugged",
       hostId: "123",
-    }),
+    })
       server.create("user", { 
         id: "123", 
         email: "b@b.com", 
