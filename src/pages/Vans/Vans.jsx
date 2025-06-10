@@ -15,6 +15,7 @@ export default function Vans() {
             try {
                 setLoading(true);
                 const data = await getVans();
+                console.log("Fetched vans from Firebase:", data);
                 setVans(data); 
             } catch (err) {
                 console.error("Failed to load vans:", err);

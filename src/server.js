@@ -1,7 +1,11 @@
 import { createServer, Model, Response } from "miragejs"
 
+let serverInstance;
+
 export function makeServer({ environment = "development" } = {}) {
-  let server = createServer({
+  if (serverInstance) return serverInstance;
+
+  serverInstance = createServer({
     environment,
 
     models: {
@@ -124,7 +128,7 @@ export function makeServer({ environment = "development" } = {}) {
     },
   })
 
-  return server
+  return serverInstance;
 }
 
 
