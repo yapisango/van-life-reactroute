@@ -21,10 +21,6 @@ import AuthRequired from './components/AuthRequired.jsx';
 
 import { makeServer } from "./server"
 
-if (import.meta.env.DEV) {
-    makeServer()
-}
-
 export default function App() {
   return (
     <BrowserRouter>
