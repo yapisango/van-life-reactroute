@@ -44,7 +44,7 @@ export function makeServer({ environment = "development" } = {}) {
         hostId: "456",
       })
       server.create("van", {
-        "id": "4",
+        id: "4",
       name: "Dream Finder",
       price: 65,
       description: "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated",
