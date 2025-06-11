@@ -13,11 +13,12 @@ export default function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         setStatus("submitting")
-        loginUser(loginFormData)
+        const data = await loginUser(loginFormData)
             .then(data => {
                 setError(null)
                 localStorage.setItem("loggedIn", true)
                 localStorage.setItem("user", JSON.stringify(data.user))
+                localStorage.setItem("token", data.token)
                 navigate(from, { replace: true })
             })
             .catch(err => {

@@ -4,13 +4,13 @@ let getDocs, getDoc, doc, collection, getFirestore, initializeApp, db
 
 if (useFirebase) {
     ({ initializeApp } = await import("firebase/app"))
-    ({ getFirestore, collection, doc, getDocs, getDoc } = await import("firebase/firestore"))
+    ({ getFirestore, collection, doc, getDocs, getDoc, query, where } = await import("firebase/firestore"))
 
 const firebaseConfig = {
   apiKey: "AIzaSyA_xu5Wi1-106iRb0taAZ1lWMn-vk_KqSQ",
   authDomain: "van-life-reactroute-827b4.firebaseapp.com",
   projectId: "van-life-reactroute-827b4",
-  storageBucket: "van-life-reactroute-827b4.firebasestorage.app",
+  storageBucket: "van-life-reactroute-827b4.appspot.com",
   messagingSenderId: "419647889289",
   appId: "1:419647889289:web:cf49d4ac26231ffa748b58"
 };

@@ -3,7 +3,9 @@ import { createServer, Model, Response } from "miragejs"
 let serverInstance;
 
 export function makeServer({ environment = "development" } = {}) {
-  if (serverInstance) return serverInstance;
+  if (process.env.NODE_ENV === "development") {
+    window.server = serverInstance
+  }
 
   serverInstance = createServer({
     environment,
@@ -18,7 +20,7 @@ export function makeServer({ environment = "development" } = {}) {
         id: "1",
         name: "Modest Explorer",
         price: 60,
-        description:"123",
+        description:"The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
         imageUrl: "/images/modest-explorer.png",
         type: "simple",
         hostId: "123",
