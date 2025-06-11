@@ -15,7 +15,7 @@ export default function VanDetail() {
                 const res = await fetch("api/vans");
                 setLoading(true);
                 const data = await res.json();
-                const foundVan = data.vans.find(v => v.id === params.id);
+                const foundVan = getVan(params.id);
                 setVan(foundVan);
             } catch (err) {
                 console.error("Failed to load van:", err);
