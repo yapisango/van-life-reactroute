@@ -1,23 +1,13 @@
-const useFirebase = import.meta.env.VITE_USE_FIREBASE === "true"
-
-let getDocs, getDoc, doc, collection, getFirestore, initializeApp, db
-
-if (useFirebase) {
-    ({ initializeApp } = await import("firebase/app"))
-    ({ getFirestore, collection, doc, getDocs, getDoc, query, where } = await import("firebase/firestore"))
-
-const firebaseConfig = {
-  apiKey: "AIzaSyA_xu5Wi1-106iRb0taAZ1lWMn-vk_KqSQ",
-  authDomain: "van-life-reactroute-827b4.firebaseapp.com",
-  projectId: "van-life-reactroute-827b4",
-  storageBucket: "van-life-reactroute-827b4.appspot.com",
-  messagingSenderId: "419647889289",
-  appId: "1:419647889289:web:cf49d4ac26231ffa748b58"
-};
-
-    const firebase = initializeApp(firebaseConfig)
-    db = getFirestore(firebase)
-}
+import { useFirebase, db, auth } from "./firebase"
+import {
+  collection,
+  doc,
+  getDocs,
+  getDoc,
+  query,
+  where
+} from "firebase/firestore"
+import { signInWithEmailAndPassword, signOut } from "firebase/auth"
 
 // ---------- FETCH FUNCTIONS ----------
 
@@ -85,24 +75,53 @@ export async function getHostVans() {
 }
 
 export async function loginUser(creds) {
-    const res = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(creds)
-    })
+    const { email, password } = creds
 
-    const data = await res.json()
+    if (useFirebase) {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password)
+            const user = userCredential.user
 
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
+            return {
+                userId: user.uid,
+                email: user.email,
+                displayName: user.displayName,
+                accessToken: await user.getIdToken()
+            }
+        } catch (error) {
+            throw {
+                message: error.message,
+                statusText: error.code,
+                status: 401
+            }
         }
-    }
+    } else {
+        const res = await fetch("/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(creds)
+        })
 
-    return data
+        const data = await res.json()
+
+        if (!res.ok) {
+            throw {
+                message: data.message,
+                statusText: res.statusText,
+                status: res.status
+            }
+        }
+
+        return data
+    }
 }
+
+export async function logoutUser() {
+  if (useFirebase) {
+    await signOut(auth)
+  }
+}
+
 
